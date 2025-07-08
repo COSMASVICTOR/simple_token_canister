@@ -1,0 +1,17 @@
+type Result = variant { Ok : text; Err : text };
+type TokenInfo = record {
+  decimals : nat8;
+  name : text;
+  total_supply : nat64;
+  symbol : text;
+};
+service : {
+  balance_of : (principal) -> (nat64) query;
+  burn : (nat64) -> (Result);
+  get_all_balances : () -> (vec record { principal; nat64 }) query;
+  get_owner : () -> (opt principal) query;
+  get_token_info : () -> (TokenInfo) query;
+  mint : (principal, nat64) -> (Result);
+  my_balance : () -> (nat64) query;
+  transfer : (principal, nat64) -> (Result);
+}

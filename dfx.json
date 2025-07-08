@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "canisters": {
+    "simple_token_canister_backend": {
+      "type": "rust",
+      "package": "simple_token_canister_backend",
+      "candid": "src/simple_token_canister_backend/simple_token_canister_backend.did",
+      "wasm": "target/wasm32-unknown-unknown/release/simple_token_canister_backend.wasm"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env"
+}
